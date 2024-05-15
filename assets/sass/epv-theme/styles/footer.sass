@@ -1,0 +1,45 @@
+footer#document-footer
+    .container
+        display: block
+        .nav-social
+            display: none // fix menu
+        .footer-legals 
+            > .container
+                margin: 0
+                padding: 0
+                width: fit-content
+            .dropdown-languages
+                text-align: left
+    @include media-breakpoint-down(desktop)
+        .footer-i18n
+            margin-top: $spacing-5
+    @include media-breakpoint-up(desktop)
+        .footer-logo 
+            margin-bottom: $spacing-3
+            a
+                margin-left: auto
+                margin-right: auto
+                width: fit-content
+                display: block
+        .footer-social,
+        .footer-legals
+            &, > ul
+                align-items: center
+                display: flex
+                justify-content: center
+                gap: $spacing-3
+                li
+                    margin-top: 0
+        .footer-social
+            flex-direction: row-reverse
+        .footer-social.site-links
+            margin-top: 0 !important // fix menu
+            li
+                flex-direction: row-reverse
+                &::after
+                    margin-right: 0
+                    padding-left: 0
+        .footer-legals
+            margin-top: $spacing-3
+            .footer-credit
+                margin-top: 0

@@ -4,14 +4,12 @@ enableRobotsTXT: true
 removePathAccents: true
 params:
   breadcrumb: 
-    position: after-hero
-  summary:
-    position: hero
+    position: hero-start
   search:
     active: true
   logo:
-    header: "/assets/images/logo.svg"
-    footer: "/assets/images/logo-noir.svg"
+    header: "/assets/images/logo-header.svg"
+    footer: "/assets/images/logo-footer.svg"
   menu:
     dropdown:
       linkToLevel1: true

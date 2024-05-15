@@ -1,0 +1,163 @@
+.blocks
+    .block-chapter
+        // Les chapitres simples, divisés en 2 si titre et sur 6 colonnes à droite sans titre
+        &--no_background
+            body.full-width:not(.page__home) &
+                &.block-titled
+                    .text
+                        @include grid(2, desktop)
+                        width: 100%
+                        .notes
+                            grid-column: 2/3
+                            margin-top: 0
+                &:not(.block-titled)
+                    .block-content
+                        width: columns(6)
+                        margin-left: auto
+            // pour quand on se sert d'un chapitre normal pour faire une liste avec le bg alt
+            + .block-chapter--alt_background.block-chapter--with-image
+                padding-top: 0
+        &--accent_background
+            .chapter
+                .rich-text
+                    font-family: $h1-font-family
+                    font-style: italic
+            @include media-breakpoint-up(desktop)
+                .chapter
+                    .rich-text
+                        font-size: pxToRem(48)
+                        line-height: pxToRem(57.6)
+                    .notes
+                        *
+                            font-size: pxToRem(24)
+                            line-height: 180%
+            @include in-page-without-sidebar
+                .chapter > *
+                    width: 100%
+        &--alt_background.block-chapter--with-image
+            .text
+                @include meta
+                padding: 0 var(--grid-gutter) var(--grid-gutter)
+            + .block-chapter--alt_background
+                padding-top: var(--grid-gutter)
+            @include in-page-without-sidebar
+                background: none
+                .block-content
+                    background: $block-chapter-layout-alt-background
+                    .text,
+                    figure
+                        width: columns(6)
+                    .text
+                        padding-bottom: var(--block-space-y)
+                        padding-top: var(--block-space-y)
+                    figure
+                        a, picture
+                            height: 100%
+                        img
+                            height: 100%
+                            object-fit: cover
+                + .block-chapter
+                    padding-top: 0
+                + .block-chapter--alt_background
+                    padding-top: var(--block-space-y)
+            @include media-breakpoint-down(desktop)
+                background: none
+                .block-content
+                    background: $block-chapter-layout-alt-background
+        + .block-datatable
+            @include in-page-without-sidebar
+                .block-content
+                    width: columns(6)
+                    margin-left: auto
+                    .top
+                        p
+                            width: auto
+    .block-posts
+        &--highlight
+            background-color: $color-text
+            padding: $spacing-3 0
+            *
+                color: white
+            .highlight
+                .media
+                    margin-bottom: $spacing-3
+            .top
+                a::after
+                    display: none
+            .post
+                .post-title
+                    font-family: $h1-font-family
+                .post-categories a
+                    @include link(white)
+            .list 
+                border-color: rgba(white, .3)
+                .post
+                    border-bottom: 1px solid rgba(white, .3)
+            @include media-breakpoint-up(desktop)
+                padding: space(25) 0
+                .list
+                    .post
+                        padding-bottom: $spacing-5
+                        &:not(:last-child)
+                            margin-bottom: $spacing-5
+            @include media-breakpoint-down(desktop)
+                .post-title
+                    margin-bottom: $spacing-2
+
+    .block-call_to_action
+        .description
+            p
+                @include h3
+        .call_to_action
+            .block-title
+                font-family: $h1-font-family
+                font-weight: 300
+                text-transform: none
+            .description p
+                font-weight: normal
+            @include media-breakpoint-down(desktop)
+                .block-title
+                    font-size: $h1-size
+            @include in-page-without-sidebar
+                align-items: center
+                display: flex
+                flex-direction: column-reverse
+                .block-title
+                    font-size: pxToRem(96)
+                > div
+                    text-align: center
+                    width: columns(8)
+                > picture,
+                > figure
+                    max-width: columns(3)
+    .block-pages
+        &--grid
+            @include in-page-without-sidebar
+                .grid
+                    @include grid(2, md)
+            .page-title
+                @include h2
+                font-family: $h1-font-family
+                a::after
+                    display: none
+    .block-features
+        ul
+            // à voir si on laisse pour la page sans sidebar
+            @include in-page-with-or-without-sidebar
+                @include grid(2, desktop)
+            li
+                background: $color-background-alt
+                padding: 0 $spacing-3 $spacing-3
+                h3
+                    font-family: $h1-font-family
+                    font-weight: normal
+                p
+                    @include meta
+                @include in-page-with-sidebar
+                    + li
+                        margin-top: 0
+                    h3
+                        margin-top: $spacing-3
+                @include media-breakpoint-down(desktop)
+                    h3
+                        margin-top: $spacing-3
