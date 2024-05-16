@@ -3,23 +3,12 @@
         // Les chapitres simples, divisés en 2 si titre et sur 6 colonnes à droite sans titre
         &--no_background
             body.full-width:not(.page__home) &
-                &.block-titled
-                    .text
-                        @include grid(2, desktop)
-                        width: 100%
-                        .notes
-                            grid-column: 2/3
-                            margin-top: 0
-                &:not(.block-titled)
-                    .block-content
+                .chapter
+                    > div
                         width: columns(6)
-                        margin-left: auto
                 &.block-chapter--with-image
-                    .chapter
-                        flex-direction: column-reverse
-                        .text
-                            margin-top: $spacing-4
-                            width: auto
+                    .notes
+                        margin-top: $spacing-4
             // pour quand on se sert d'un chapitre normal pour faire une liste avec le bg alt
             + .block-chapter--alt_background.block-chapter--with-image
                 padding-top: 0
