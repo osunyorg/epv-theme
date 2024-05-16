@@ -14,6 +14,12 @@
                     .block-content
                         width: columns(6)
                         margin-left: auto
+                &.block-chapter--with-image
+                    .chapter
+                        flex-direction: column-reverse
+                        .text
+                            margin-top: $spacing-4
+                            width: auto
             // pour quand on se sert d'un chapitre normal pour faire une liste avec le bg alt
             + .block-chapter--alt_background.block-chapter--with-image
                 padding-top: 0
