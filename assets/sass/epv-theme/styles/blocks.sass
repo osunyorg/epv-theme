@@ -26,26 +26,6 @@
             // pour quand on se sert d'un chapitre normal pour faire une liste avec le bg alt
             + .block-chapter--alt_background.block-chapter--with-image
                 padding-top: 0
-        &--accent_background
-            .chapter
-                .rich-text
-                    font-family: $h1-font-family
-                    font-style: italic
-            .top
-                .block-title
-                    @include h6
-            @include media-breakpoint-up(desktop)
-                .chapter
-                    .rich-text
-                        font-size: pxToRem(48)
-                        line-height: pxToRem(57.6)
-                    .notes
-                        *
-                            font-size: pxToRem(24)
-                            line-height: 180%
-            @include in-page-without-sidebar
-                .chapter > *
-                    width: 100%
         &--alt_background.block-chapter--with-image
             .text
                 @include meta

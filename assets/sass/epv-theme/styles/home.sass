@@ -51,9 +51,13 @@ body.page__home
             .chapter
                 .rich-text
                     font-family: $h1-font-family
-                    font-style: italic
+            .top
+                .block-title
+                    @include h6
             @include media-breakpoint-up(desktop)
                 .chapter
+                    .text
+                        width: 100%
                     .rich-text
                         font-size: pxToRem(48)
                         line-height: pxToRem(57.6)
@@ -61,9 +65,6 @@ body.page__home
                         *
                             font-size: pxToRem(24)
                             line-height: 180%
-            @include in-page-without-sidebar
-                .chapter > *
-                    width: 100%
     .block-image
         .image-landscape
             margin-left: auto
