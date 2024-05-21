@@ -55,17 +55,54 @@ body.page__home
             .top
                 .block-title
                     @include h6
-            @include media-breakpoint-up(desktop)
-                .chapter
-                    .text
-                        width: 100%
+            &.block-chapter--with-image
+                .block-content
+                    .chapter
+                        flex-direction: column-reverse
+                        .text
+                            width: unset
                     .rich-text
-                        font-size: pxToRem(48)
-                        line-height: pxToRem(57.6)
-                    .notes
-                        *
-                            font-size: pxToRem(24)
-                            line-height: 180%
+                        margin-top: $spacing-3
+                        p
+                            font-family: $h1-font-family
+                        a
+                            @extend .btn
+                            @include icon(arrow-right, after)
+                                margin-left: $spacing-1
+                            @extend .btn
+                            background: $block-call-to-action-button-background
+                            color: $block-call-to-action-button-color
+                            display: block
+                            margin-left: auto
+                            margin-right: auto
+                            margin-top: $spacing-4
+                            width: max-content
+                            &:hover
+                                background: $block-call-to-action-button-hover-background
+            @include media-breakpoint-up(desktop)
+                &.block-chapter--with-image
+                    .block-content
+                        margin-left: auto
+                        margin-right: auto
+                        width: columns(6)
+                        .rich-text
+                            margin-top: $spacing-5
+                        p
+                            font-size: pxToRem(32)
+                            line-height: pxToRem(40)
+                        a
+                            margin-top: $spacing-5
+                &:not(.block-chapter--with-image)
+                    .chapter
+                        .text
+                            width: 100%
+                        .rich-text
+                            font-size: pxToRem(48)
+                            line-height: pxToRem(57.6)
+                        .notes
+                            *
+                                font-size: pxToRem(24)
+                                line-height: 180%
     .block-pages,
     .block-posts
         .block-title
@@ -75,34 +112,6 @@ body.page__home
             margin-left: auto
             margin-right: auto
             width: columns(8)
-    .block-embed
-        .block-content
-            p
-                font-family: $h1-font-family
-                line-height: pxToRem(40)
-                + p,
-                + .btn
-                    margin-top: $spacing-4
-            a
-                @include icon(arrow-right, after)
-                    margin-left: $spacing-1
-                @extend .btn
-                background: $block-call-to-action-button-background
-                color: $block-call-to-action-button-color
-                &:hover
-                    background: $block-call-to-action-button-hover-background
-
-            @include media-breakpoint-up(desktop)
-                margin-left: auto
-                margin-right: auto
-                width: columns(6)
-                p
-                    font-size: pxToRem(32)
-                a
-                    display: block
-                    margin-left: auto
-                    margin-right: auto
-                    width: max-content
     .block-testimonials
         figure
             display: flex
@@ -115,6 +124,9 @@ body.page__home
         figcaption
             margin-left: auto
             margin-right: auto
+        + .block-chapter--accent_background.block-chapter--with-image
+            i
+                color: $color-accent
         @include media-breakpoint-up(desktop)
             blockquote p
                 font-size: pxToRem(96)
