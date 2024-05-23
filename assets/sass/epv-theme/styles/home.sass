@@ -26,15 +26,15 @@ body.page__home
                     h1
                         font-size: pxToRem(124)
                     .lead
-                        width: columns(6)
+                        width: 68ch
                         margin: 0 auto
     .block-chapter
         .chapter
             a:not(.glightbox)
-                text-decoration: none
                 @include hover-translate-icon
                 @include icon(arrow-right, after)
                     margin-left: $spacing-1
+                text-decoration: none
         &--with-image
             .chapter
                 flex-direction: row-reverse
@@ -101,7 +101,7 @@ body.page__home
                             line-height: pxToRem(57.6)
                         .notes
                             *
-                                font-size: pxToRem(24)
+                                font-size: pxToRem(28)
                                 line-height: 180%
     .block-pages,
     .block-posts
