@@ -57,10 +57,17 @@ body.page__home
                     @include h6
             &.block-chapter--with-image
                 .block-content
+                    width: unset !important
                     .chapter
                         flex-direction: column-reverse
+                        > *
+                            margin-left: auto
+                            margin-right: auto
                         .text
-                            width: unset
+                            order: unset
+                    figure
+                        a
+                            margin-top: 0
                     .rich-text
                         margin-top: $spacing-3
                         p
@@ -81,17 +88,23 @@ body.page__home
                                 background: $block-call-to-action-button-hover-background
             @include media-breakpoint-up(desktop)
                 &.block-chapter--with-image
+                    + .block-chapter--with-image
+                        padding-top: 0
                     .block-content
                         margin-left: auto
                         margin-right: auto
                         width: columns(6)
+                        .text
+                            width: columns(6)
+                        figure
+                            width: columns(8)
+                        a:not(.glightbox)
+                            margin-top: $spacing-5
                         .rich-text
                             margin-top: $spacing-5
-                        p
-                            font-size: pxToRem(32)
-                            line-height: pxToRem(40)
-                        a
-                            margin-top: $spacing-5
+                            p
+                                font-size: pxToRem(32)
+                                line-height: pxToRem(40)
                 &:not(.block-chapter--with-image)
                     .chapter
                         .text
@@ -134,6 +147,8 @@ body.page__home
             figure
                 padding-right: 0 !important
                 width: columns(7)
+            + .block-chapter--accent_background.block-chapter--with-image
+                padding-top: 0
         @include media-breakpoint-down(desktop)
             blockquote p
                 font-size: $h1-size

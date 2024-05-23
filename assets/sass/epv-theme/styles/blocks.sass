@@ -1,5 +1,9 @@
 .blocks
     .block-chapter
+        // à enlever en fonction de la solution sur le thème
+        .notes *
+            // on met le font-weight des notes en prio navigateur
+            font-weight: revert
         // Les chapitres simples, divisés en 2 si titre et sur 6 colonnes à droite sans titre
         &--no_background
             body.full-width:not(.page__home) &
@@ -63,6 +67,10 @@
                     .top
                         p
                             width: auto
+                    table
+                        tbody,
+                        thead
+                            @include small
     .block-posts
         &--highlight
             background-color: $color-text
