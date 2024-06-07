@@ -1,0 +1,30 @@
+.events
+    .event
+        &,
+        .events--list &
+            .event-title
+                font-size: pxToRem(28)
+            .event-title,
+            .event-subtitle
+                font-family: $h1-font-family
+                font-weight: normal
+    @include in-page-with-or-without-sidebar
+        .event
+            &-title,
+            hgroup
+                margin-bottom: 0
+            &-title
+                @include h2
+                font-family: $h1-font-family
+            &-subtitle
+                font-style: italic
+                font-size: pxToRem(32)
+
+.events__page
+    .hero
+        &-text
+            hgroup
+                span
+                    @include h2
+                    font-family: $h1-font-family
+                    font-weight: 300
