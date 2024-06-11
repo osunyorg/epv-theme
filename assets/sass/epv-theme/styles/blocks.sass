@@ -67,6 +67,10 @@
                         tbody,
                         thead
                             @include small
+        @include in-page-without-sidebar
+            figure
+                img
+                    margin-right: auto
     .block-posts
         &--highlight
             background-color: $color-text
