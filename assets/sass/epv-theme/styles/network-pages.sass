@@ -1,0 +1,37 @@
+.pages__section.ancestor-network
+    @include media-breakpoint-up(desktop)
+        .document-content
+            .toc
+                &-cta
+                    display: none
+                &-container
+                    background: $color-background
+                    display: flex
+                    margin-bottom: $spacing-4
+                    position: sticky
+                    transform: none
+                    width: 100%
+                    z-index: 3
+                    button
+                        display: none
+                &-content
+                    width: 100%
+                &-title
+                    display: none
+                ol
+                    align-items: center
+                    flex-direction: row
+                    gap: $spacing-3
+                    justify-content: space-between
+                    width: 100%
+                    li
+                        a
+                            @include h6
+                            font-size: $toc-sticky-font-size
+                            &:not(.active)
+                                color: $color-text-alt
+                                font-weight: normal
+                            &.active
+                                font-weight: bold
+                        + li
+                            margin-top: 0
