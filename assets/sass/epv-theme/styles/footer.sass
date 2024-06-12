@@ -3,12 +3,25 @@ footer#document-footer
         display: block
         .nav-social
             li 
+                position: relative
+                @include icon(link-blank, before, true)
+                    vertical-align: baseline
+                    margin-right: space(2)
+                @include media-breakpoint-down(desktop)
+                    width: fit-content
+                    &::before
+                        display: inline-block
+                        font-size: pxToRem(32)
+                        padding-right: $spacing-2
+                        margin-right: $spacing-2
+                        transform: translateX(-25%)
                 a
+                    @include stretched-link(before)
                     align-items: baseline
                     display: inline-flex
                     flex-direction: row-reverse
                     &::after
-                        margin-right: space(2)
+                        display: none
         .footer-legals 
             > .container
                 margin: 0
