@@ -1,4 +1,8 @@
 .blocks
+    .block:not(.block-chapter, .block-call_to_action)
+        .top
+            .block-title
+                @include h6
     .block-chapter
         // Les chapitres simples, divisés en 2 si titre et sur 6 colonnes à droite sans titre
         &--no_background
@@ -20,9 +24,10 @@
                         .text
                             margin-bottom: $spacing-4
                             width: auto
-                        figure
-                            margin-left: auto
-                            max-width: columns(6)
+                        @include media-breakpoint-up(desktop)
+                            figure
+                                margin-left: calc(#{columns(6)} + #{var(--grid-gutter)})
+                                max-width: columns(6)
             // pour quand on se sert d'un chapitre normal pour faire une liste avec le bg alt
             + .block-chapter--alt_background.block-chapter--with-image
                 padding-top: 0
