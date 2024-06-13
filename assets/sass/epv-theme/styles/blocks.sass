@@ -15,9 +15,10 @@
                             grid-column: 2/3
                             margin-top: 0
                 &:not(.block-titled)
-                    .block-content
-                        width: columns(6)
-                        margin-left: auto
+                    @include media-breakpoint-up(desktop)
+                        .block-content
+                            width: columns(6)
+                            margin-left: auto
                 &.block-chapter--with-image
                     .chapter
                         flex-direction: column
