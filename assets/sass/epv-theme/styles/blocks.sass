@@ -25,10 +25,12 @@
                         .text
                             margin-bottom: $spacing-4
                             width: auto
-                        @include media-breakpoint-up(desktop)
+                    @include media-breakpoint-up(desktop)
+                        figure
+                            max-width: columns(6)
+                        &.block-titled
                             figure
                                 margin-left: calc(#{columns(6)} + #{var(--grid-gutter)})
-                                max-width: columns(6)
             // pour quand on se sert d'un chapitre normal pour faire une liste avec le bg alt
             + .block-chapter--alt_background.block-chapter--with-image
                 padding-top: 0
