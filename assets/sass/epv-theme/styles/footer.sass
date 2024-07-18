@@ -7,15 +7,13 @@ footer#document-footer
                 align-items: center
                 position: relative
                 @include icon(links-line, before, true)
-                    margin-right: space(2)
-                    font-size: pxToRem(14)
+                    margin-right: $spacing-2
+                    font-size: $footer-icons-size-desktop
                 @include media-breakpoint-down(desktop)
                     width: fit-content
                     &::before
                         display: inline-block
-                        font-size: pxToRem(32)
-                        padding-right: $spacing-2
-                        margin-right: $spacing-2
+                        font-size: $footer-icons-size
                         transform: translateX(-25%)
                 a
                     @include stretched-link(before)
@@ -61,8 +59,7 @@ footer#document-footer
             li
                 flex-direction: row-reverse
                 &::after
-                    margin-right: 0
-                    padding-left: 0
+                    margin-right: $spacing-2
                 + li
                     margin-top: 0
         .footer-legals
