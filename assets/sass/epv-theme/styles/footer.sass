@@ -33,6 +33,10 @@ footer#document-footer
         .footer-i18n
             margin-top: $spacing-5
     @include media-breakpoint-up(desktop)
+        ul:not(.dropdown-menu) 
+            li 
+                &, + li
+                    margin-top: 0
         .footer-logo 
             margin-bottom: $spacing-3
             a
@@ -47,21 +51,18 @@ footer#document-footer
                 display: flex
                 justify-content: center
                 gap: $spacing-3
-                li
-                    margin-top: 0
         .footer-social
             flex-direction: row-reverse
             margin-top: $spacing-4
             li
                 font-size: $h4-size-desktop
-        .footer-social.site-links
-            margin-top: 0 !important // fix menu
+        .nav-social + .footer-social.site-links
+            &, li + li
+                margin-top: 0
             li
                 flex-direction: row-reverse
                 &::after
                     margin-right: $spacing-2
-                + li
-                    margin-top: 0
         .footer-legals
             margin-top: $spacing-3
             .footer-credit
