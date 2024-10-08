@@ -40,7 +40,8 @@ body.page__home
                 text-decoration: none
         &--with-image
             .chapter
-                flex-direction: row-reverse
+                @include media-breakpoint-up(desktop)
+                    flex-direction: row-reverse
         &:not(.block-chapter--alt_background, .block-chapter--accent_background)
             .chapter
                 .text
@@ -122,6 +123,7 @@ body.page__home
                             *
                                 font-size: pxToRem(28)
                                 line-height: 180%
+
     .block-image
         .image-landscape
             margin-left: auto

@@ -11,10 +11,10 @@ footer#document-footer
                     font-size: $footer-icons-size-desktop
                 @include media-breakpoint-down(desktop)
                     width: fit-content
+                    transform: translateX(-(pxToRem(5)))
                     &::before
                         display: inline-block
                         font-size: $footer-icons-size
-                        transform: translateX(-25%)
                 a
                     @include stretched-link(before)
                     align-items: baseline
@@ -32,6 +32,8 @@ footer#document-footer
     @include media-breakpoint-down(desktop)
         .footer-i18n
             margin-top: $spacing-5
+        .nav-social li::before
+            margin-right: 0
     @include media-breakpoint-up(desktop)
         ul:not(.dropdown-menu) 
             li 
