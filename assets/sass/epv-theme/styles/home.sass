@@ -38,6 +38,10 @@ body.page__home
                 @include icon(arrow-right-line, after)
                     margin-left: $spacing-1
                 text-decoration: none
+                @include media-breakpoint-down(desktop)
+                    display: inline-block
+                    &:last-child
+                        margin-top: $spacing-1
         &--with-image
             .chapter
                 @include media-breakpoint-up(desktop)
