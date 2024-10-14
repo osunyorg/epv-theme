@@ -38,8 +38,6 @@
             .text
                 @include meta
                 padding: 0 var(--grid-gutter) var(--grid-gutter)
-            figcaption
-                padding: 0 var(--grid-gutter)
             + .block-chapter--alt_background
                 padding-top: var(--grid-gutter)
             @include in-page-without-sidebar
@@ -53,7 +51,8 @@
                         padding-bottom: var(--grid-gutter)
                         padding-top: var(--grid-gutter)
                     figure
-                        a, picture
+                        height: auto
+                        picture
                             height: 100%
                         img
                             width: 100%
@@ -65,6 +64,16 @@
                 background: none
                 .block-content
                     background: $block-chapter-layout-alt-background
+                figcaption
+                    padding: 0 var(--grid-gutter)
+            @include media-breakpoint-up(desktop)
+                figure
+                    @include collapsed-figcaption
+                    figcaption
+                        margin: 0
+                        &::before,
+                        .credit
+                            background: none
         + .block-datatable
             @include in-page-without-sidebar
                 .block-content
