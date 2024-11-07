@@ -135,10 +135,11 @@ body.page__home
             width: columns(8)
     .block-testimonials
         figure
+            align-items: center
             display: flex
             flex-direction: column-reverse
-            text-align: center
             gap: $spacing-3
+            text-align: center
         figcaption
             text-transform: uppercase
         figure,
@@ -153,8 +154,10 @@ body.page__home
                 font-size: pxToRem(96)
                 line-height: pxToRem(86.4)
             figure
+                padding-left: 0 !important
                 padding-right: 0 !important
-                width: columns(7)
+                @include media-breakpoint-up(xxl)
+                    width: columns(7)
             + .block-chapter--accent_background.block-chapter--with-image
                 padding-top: 0
         @include media-breakpoint-down(desktop)
