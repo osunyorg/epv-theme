@@ -11,8 +11,10 @@ params:
     header: "/assets/images/logo-header.svg"
     footer: "/assets/images/logo-footer.svg"
   menu:
-    dropdown:
-      linkToLevel1: true
+    primary:
+      level_2:
+        title:
+          active: true
   posts:
     index:
       layout: grid
