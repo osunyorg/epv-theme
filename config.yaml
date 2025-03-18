@@ -5,8 +5,9 @@ removePathAccents: true
 params:
   breadcrumb:
     position: hero-start
-  search:
-    active: true
+  home:
+    head:
+      title: site
   logo:
     header: "/assets/images/logo-header.svg"
     footer: "/assets/images/logo-footer.svg"
@@ -18,3 +19,5 @@ params:
   posts:
     index:
       layout: grid
+  search:
+    active: true
