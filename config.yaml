@@ -17,5 +17,11 @@ params:
   posts:
     index:
       layout: grid
+      options:
+        categories: false
+  events:
+    index:
+      options:
+        categories: false
   search:
     active: true
