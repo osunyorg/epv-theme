@@ -27,8 +27,6 @@ footer#document-footer
                 margin: 0
                 padding: 0
                 width: fit-content
-            .dropdown-languages
-                text-align: left
     @include media-breakpoint-down(desktop)
         .footer-i18n
             margin-top: $spacing-5
@@ -40,7 +38,10 @@ footer#document-footer
                 &, + li
                     margin-top: 0
         .footer-i18n
-            margin-top: 0 !important
+            margin-top: -2px !important
+            .dropdown-menu ul li a
+                padding-left: $spacing-1
+                padding-right: $spacing-1
         .footer-logo 
             margin-bottom: $spacing-3
             a
