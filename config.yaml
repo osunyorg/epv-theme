@@ -1,4 +1,3 @@
-theme: osuny
 _merge: deep
 params:
   breadcrumb:
