@@ -28,3 +28,7 @@ params:
     positions:
       - primary
       - taxonomies #custom
+  categories:
+    single:
+      taxonomies:
+        display: true
