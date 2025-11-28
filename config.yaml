@@ -25,3 +25,6 @@ params:
         categories: false
   search:
     active: true
+    positions:
+      - primary
+      - taxonomies #custom
