@@ -27,11 +27,20 @@ footer#document-footer
                 margin: 0
                 padding: 0
                 width: fit-content
+
+    @include media-breakpoint-down(xl)
+        .footer-legals
+            flex-wrap: wrap
+            @include media-breakpoint-up(desktop)
+                .footer-credit
+                    margin-top: space() !important
+    
     @include media-breakpoint-down(desktop)
         .footer-i18n
             margin-top: $spacing-5
         .nav-social li::before
             margin-right: 0
+    
     @include media-breakpoint-up(desktop)
         ul:not(.dropdown-menu) 
             li 

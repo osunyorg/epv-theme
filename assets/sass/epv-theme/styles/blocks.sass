@@ -109,8 +109,10 @@
                     @include link(white)
             .list 
                 border-color: rgba(white, .3)
-                .post
+                > li
                     border-bottom: 1px solid rgba(white, .3)
+                    &:not(:last-child)
+                        margin-bottom: $spacing-5
             @include media-breakpoint-up(desktop)
                 padding: space(25) 0
                 .list
